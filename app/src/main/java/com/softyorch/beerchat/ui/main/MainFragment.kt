@@ -5,6 +5,8 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.navigation.fragment.findNavController
+import com.softyorch.beerchat.R
 import com.softyorch.beerchat.databinding.FragmentMainBinding
 
 class MainFragment : Fragment() {
@@ -15,6 +17,11 @@ class MainFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View {
         binding = FragmentMainBinding.inflate(inflater, container, false)
+        binding.btnChat.setOnClickListener {
+            if (!binding.tiedName.text.isNullOrEmpty())
+                findNavController().navigate(R.id.action_main_fragment_to_chat_fragment)
+        }
+
         return binding.root
     }
 
