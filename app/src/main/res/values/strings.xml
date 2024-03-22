@@ -1,7 +1,17 @@
 <resources>
+
+    <!-- Main Fragment -->
     <string name="app_name">BeerChat</string>
     <string name="welcome_message">Bienvenido a Bear Chat</string>
     <string name="welcome_message_subtitle">El mejor chat del mundo sobre Cervezas</string>
     <string name="welcome_user_name_hint">Escribe tu nombre</string>
     <string name="welcome_btn_chat">Chat!</string>
+
+    <!-- Chat Fragment -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="icon_back">Volver atrás</string>
+    <string name="send_message_hint">Escribe tu mensaje</string>
+    <string name="send_message_btn">Enviar</string>
+    <string name="logo">Logo</string>
+
 </resources>
