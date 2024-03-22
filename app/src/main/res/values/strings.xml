@@ -13,5 +13,6 @@
     <string name="send_message_hint">Escribe tu mensaje</string>
     <string name="send_message_btn">Enviar</string>
     <string name="logo">Logo</string>
+    <string name="image_msg_other">Image other</string>
 
 </resources>
