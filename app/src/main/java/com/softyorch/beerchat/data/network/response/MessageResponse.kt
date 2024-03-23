@@ -21,7 +21,9 @@ data class MessageResponse(
                 "$hour - $date"
             }
 
-            return MessageDomain(msg = msg.orEmpty(), date = totalDate, user = user!!.toDomain())
+            return MessageDomain(
+                msg = msg.orEmpty(), hour = hour.orEmpty(), date = totalDate, user = user!!.toDomain()
+            )
         }
     }
 }
