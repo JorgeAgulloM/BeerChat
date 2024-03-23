@@ -5,11 +5,13 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.softyorch.beerchat.domain.useCase.GetMessage
 import com.softyorch.beerchat.domain.useCase.GetUserName
+import com.softyorch.beerchat.domain.useCase.LogoutUser
 import com.softyorch.beerchat.domain.useCase.SendMessage
 import com.softyorch.beerchat.ui.chat.model.MessageUi
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.async
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.update
@@ -21,6 +23,7 @@ class ChatViewModel @Inject constructor(
     private val sendMessage: SendMessage,
     private val getMessage: GetMessage,
     private val getUserName: GetUserName,
+    private val logoutUser: LogoutUser,
     private val dispatcherIO: CoroutineDispatcher = Dispatchers.IO
 ): ViewModel() {
 
@@ -51,8 +54,14 @@ class ChatViewModel @Inject constructor(
         }
     }
 
-    fun sendMessage() {
-        val msg = "Holiwi"
-        sendMessage(msg)
+    fun sendMessageToOther(msg: String) {
+        sendMessage(msg, name)
+    }
+
+    fun logout(onViewFinish: () -> Unit) {
+        viewModelScope.launch {
+            async { logoutUser() }.await()
+            onViewFinish()
+        }
     }
 }
