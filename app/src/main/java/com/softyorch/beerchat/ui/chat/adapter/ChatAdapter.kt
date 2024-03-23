@@ -9,7 +9,7 @@ import com.softyorch.beerchat.ui.chat.model.MessageUi
 
 class ChatAdapter(
     var messagesList: MutableList<MessageUi>,
-    private val userName: String
+    private var userName: String = ""
 ) : RecyclerView.Adapter<ChatViewHolder>() {
 
     companion object {
@@ -17,7 +17,8 @@ class ChatAdapter(
         const val RECEIVE_MESSAGE = 1
     }
 
-    fun updateList(list: MutableList<MessageUi>) {
+    fun updateList(list: MutableList<MessageUi>, name: String) {
+        userName = name
         messagesList.clear()
         messagesList.addAll(list)
         notifyItemInserted(messagesList.size - 1)
