@@ -7,7 +7,7 @@
 
 
     <TextView
-        android:id="@+id/tvDateMe"
+        android:id="@+id/tvDateOther"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
@@ -29,6 +29,7 @@
         android:contentDescription="@string/image_msg_other" />
 
     <TextView
+        android:id="@+id/tvName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:paddingHorizontal="6dp"
@@ -45,7 +46,7 @@
         app:cardCornerRadius="12dp"
         app:cardUseCompatPadding="true"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvDateMe">
+        app:layout_constraintTop_toBottomOf="@+id/tvDateOther">
 
         <TextView
             android:id="@+id/tvChatMe"
