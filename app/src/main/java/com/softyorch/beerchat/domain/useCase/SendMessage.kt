@@ -7,11 +7,11 @@ import java.util.Calendar
 import javax.inject.Inject
 
 class SendMessage @Inject constructor(private val firebaseChatService: FirebaseChatService) {
-    operator fun invoke(msg: String) {
-        firebaseChatService.sendMsgToFirebase(generateUserDto(msg))
+    operator fun invoke(msg: String, userName: String) {
+        firebaseChatService.sendMsgToFirebase(generateUserDto(msg, userName))
     }
 
-    private fun generateUserDto(msg: String): MessageDto {
+    private fun generateUserDto(msg: String, userName: String): MessageDto {
         val calendar = Calendar.getInstance()
 
         val hour = calendar.get(Calendar.HOUR_OF_DAY)
@@ -24,7 +24,7 @@ class SendMessage @Inject constructor(private val firebaseChatService: FirebaseC
         val date = "$day-$month-$year"
 
         val user = UserDto(
-            userName = "UserTest",
+            userName = userName,
             admin = false
         )
 
