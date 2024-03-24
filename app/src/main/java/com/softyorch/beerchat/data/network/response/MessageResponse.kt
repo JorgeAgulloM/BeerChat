@@ -11,18 +11,8 @@ data class MessageResponse(
 ) {
     companion object {
         fun MessageResponse.toDomain(): MessageDomain {
-            val totalDate = if (date == null && hour == null) {
-                "no date"
-            } else if (date == null) {
-                hour.orEmpty()
-            } else if (hour == null) {
-                date
-            } else {
-                "$hour - $date"
-            }
-
             return MessageDomain(
-                msg = msg.orEmpty(), hour = hour.orEmpty(), date = totalDate, user = user!!.toDomain()
+                msg = msg.orEmpty(), hour = hour.orEmpty(), date = date.orEmpty(), user = user!!.toDomain()
             )
         }
     }
