@@ -45,7 +45,10 @@ class ChatAdapter(
     override fun getItemCount() = messagesList.size
 
     override fun onBindViewHolder(holder: ChatViewHolder, position: Int) {
-        holder.bind(messagesList[position], getItemViewType(position))
+        holder.bind(
+            messageUi = messagesList[position],
+            oldMessage = if (position > 0) messagesList[position - 1] else null,
+            itemViewType = getItemViewType(position))
     }
 
     override fun getItemViewType(position: Int): Int {
