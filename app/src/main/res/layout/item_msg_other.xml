@@ -19,14 +19,14 @@
 
     <ImageView
         android:id="@+id/ivUser"
-        android:layout_width="24dp"
-        android:layout_height="24dp"
+        android:layout_width="32dp"
+        android:layout_height="32dp"
         android:layout_marginTop="16dp"
         android:layout_marginHorizontal="12dp"
-        android:background="@color/hour_date_color"
         android:contentDescription="@string/image_msg_other"
         android:paddingHorizontal="12dp"
-        android:src="@drawable/beer_chat_logo"
+        android:src="@drawable/other_user"
+        android:scaleType="centerCrop"
         app:layout_constraintBottom_toTopOf="@+id/cardChat"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"/>
