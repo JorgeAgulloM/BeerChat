@@ -2,7 +2,6 @@ package com.softyorch.beerchat.ui.chat.adapter
 
 import android.widget.ImageView
 import android.widget.TextView
-import androidx.core.view.marginTop
 import androidx.recyclerview.widget.RecyclerView
 import androidx.viewbinding.ViewBinding
 import com.softyorch.beerchat.databinding.ItemMsgMeBinding
@@ -39,7 +38,6 @@ class ChatViewHolder(private val binding: ViewBinding):RecyclerView.ViewHolder(b
 
     private fun bindSendMessage(messageUi: MessageUi, oldMessage: MessageUi?) {
         val currentBinding = binding as ItemMsgMeBinding
-        val isLastUser = isLastUser(messageUi.user.userName, oldMessage)
         val isDiffDate = isDiffDate(messageUi.date, oldMessage)
         messageUi.apply {
             currentBinding.apply {
