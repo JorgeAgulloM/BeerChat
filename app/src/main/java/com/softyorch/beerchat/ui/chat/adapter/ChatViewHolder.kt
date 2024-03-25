@@ -46,9 +46,9 @@ class ChatViewHolder(private val binding: ViewBinding):RecyclerView.ViewHolder(b
                 tvChat.text = msg
                 tvHour.text = hour
                 if (!isDiffDate) {
-                    tvDateMe.text = date
+                    tvDate.text = date
                 }
-                tvDateMe.visibility = if (isDiffDate) TextView.GONE else TextView.VISIBLE
+                tvDate.visibility = if (isDiffDate) TextView.GONE else TextView.VISIBLE
             }
         }
     }
